@@ -1,0 +1,2246 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>CodeWave Academy PRO | Computer Courses</title><!-- Bootstrap 5 --><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"><!-- Google Font --><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><style>
+
+/* =====================================================
+   CODEWAVE ACADEMY PRO
+===================================================== */
+
+:root {
+    --sea: #20c9a0;
+    --sea-light: #72e6cf;
+    --sea-dark: #087d67;
+    --dark: #031b17;
+    --dark2: #062a25;
+    --dark3: #041f1b;
+    --white: #ffffff;
+    --muted: #9fc1ba;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: var(--dark);
+    color: white;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* =====================================================
+   PRELOADER
+===================================================== */
+
+#preloader {
+    position: fixed;
+    inset: 0;
+    background: var(--dark);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+}
+
+.loader {
+    width: 55px;
+    height: 55px;
+    border: 4px solid rgba(255,255,255,.15);
+    border-top-color: var(--sea);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,27,23,.97),
+            rgba(3,65,57,.76)
+        ),
+        url("background.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    right: -150px;
+    top: 120px;
+    background: var(--sea);
+    filter: blur(150px);
+    opacity: .18;
+    border-radius: 50%;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    left: -180px;
+    bottom: -150px;
+    background: #00ffd0;
+    filter: blur(150px);
+    opacity: .10;
+    border-radius: 50%;
+}
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.custom-navbar {
+    margin-top: 20px;
+    padding: 10px 18px;
+    border-radius: 50px;
+
+    background: rgba(255,255,255,.09);
+    border: 1px solid rgba(255,255,255,.15);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.25);
+
+    position: relative;
+    z-index: 10;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: 900;
+    color: white !important;
+}
+
+.navbar-brand span {
+    color: var(--sea);
+}
+
+.nav-link {
+    color: white !important;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin: 0 7px;
+    transition: .3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--sea) !important;
+}
+
+.navbar-toggler {
+    border: 1px solid rgba(255,255,255,.25);
+    padding: 8px 11px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.hero-content {
+    min-height: 82vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text {
+    max-width: 760px;
+    padding: 60px 0;
+}
+
+.badge-custom {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 9px 17px;
+
+    border-radius: 50px;
+
+    background: rgba(32,201,160,.13);
+    border: 1px solid rgba(32,201,160,.35);
+
+    color: var(--sea-light);
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    animation: fadeDown .8s ease;
+}
+
+.hero h1 {
+    margin-top: 22px;
+    font-size: clamp(48px, 8vw, 90px);
+    line-height: .96;
+    letter-spacing: -4px;
+    font-weight: 900;
+
+    animation: fadeUp .9s ease;
+}
+
+.hero h1 span {
+    color: var(--sea);
+}
+
+.hero-description {
+    max-width: 650px;
+    margin-top: 28px;
+
+    color: #c8dfdb;
+    line-height: 1.8;
+    font-size: 16px;
+
+    animation: fadeUp 1.1s ease;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.btn-sea {
+    background: var(--sea);
+    color: #03231e;
+
+    border: none;
+    border-radius: 50px;
+
+    padding: 14px 25px;
+
+    font-weight: 800;
+
+    transition: .3s;
+}
+
+.btn-sea:hover {
+    background: white;
+    color: var(--sea-dark);
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(32,201,160,.25);
+}
+
+.btn-outline-custom {
+    border: 1px solid rgba(255,255,255,.35);
+    color: white;
+
+    border-radius: 50px;
+
+    padding: 13px 25px;
+
+    font-weight: 700;
+
+    transition: .3s;
+}
+
+.btn-outline-custom:hover {
+    background: white;
+    color: var(--sea-dark);
+}
+
+/* =====================================================
+   FLOATING CARD
+===================================================== */
+
+.hero-card {
+    position: absolute;
+    right: 7%;
+    bottom: 15%;
+
+    width: 220px;
+
+    padding: 20px;
+
+    background: rgba(255,255,255,.09);
+    border: 1px solid rgba(255,255,255,.15);
+
+    border-radius: 22px;
+
+    backdrop-filter: blur(20px);
+
+    animation: float 4s ease-in-out infinite;
+}
+
+.hero-card-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: var(--sea);
+    color: #03231e;
+
+    font-size: 21px;
+}
+
+.hero-card h5 {
+    margin-top: 15px;
+    font-weight: 800;
+}
+
+.hero-card p {
+    color: var(--muted);
+    font-size: 12px;
+    margin: 0;
+}
+
+@keyframes float {
+    0%,100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+section {
+    scroll-margin-top: 80px;
+}
+
+.courses-section {
+    padding: 100px 0;
+    background: var(--dark3);
+}
+
+.section-label {
+    color: var(--sea);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.section-title {
+    font-size: clamp(35px, 5vw, 50px);
+    font-weight: 900;
+    margin-top: 8px;
+}
+
+.section-title span {
+    color: var(--sea);
+}
+
+.section-text {
+    max-width: 650px;
+    margin: 15px auto 55px;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.course-search {
+    max-width: 550px;
+    margin: 0 auto 45px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 5px 18px;
+
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.12);
+
+    border-radius: 50px;
+}
+
+.course-search i {
+    color: var(--sea);
+}
+
+.course-search input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 12px;
+}
+
+.course-search input::placeholder {
+    color: #789891;
+}
+
+/* =====================================================
+   COURSE CARD
+===================================================== */
+
+.course-card {
+    height: 100%;
+    padding: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025)
+        );
+
+    border: 1px solid rgba(255,255,255,.09);
+
+    border-radius: 25px;
+
+    transition: .4s;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.course-card::before {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    right: -70px;
+    top: -70px;
+
+    background: var(--sea);
+
+    border-radius: 50%;
+
+    filter: blur(50px);
+    opacity: .12;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+
+    border-color: rgba(32,201,160,.6);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.3);
+}
+
+.course-icon {
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: var(--sea);
+    color: #03231e;
+
+    font-size: 25px;
+
+    margin-bottom: 23px;
+}
+
+.course-card h3 {
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.course-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+    min-height: 70px;
+}
+
+.rating {
+    color: #ffd166;
+    font-size: 12px;
+}
+
+.course-info {
+    display: flex;
+    justify-content: space-between;
+
+    color: var(--sea-light);
+
+    font-size: 12px;
+
+    margin: 20px 0;
+}
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats {
+    padding: 80px 0;
+    background: var(--dark);
+}
+
+.stat-box {
+    padding: 25px 10px;
+}
+
+.stat-number {
+    font-size: 43px;
+    font-weight: 900;
+    color: var(--sea);
+}
+
+.stat-text {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about {
+    padding: 100px 0;
+    background: var(--dark2);
+}
+
+.about-box {
+    padding: 55px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025)
+        );
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    border-radius: 30px;
+}
+
+.about-icon {
+    font-size: 55px;
+    color: var(--sea);
+    margin-bottom: 20px;
+}
+
+.about h2 {
+    font-size: clamp(35px,5vw,50px);
+    font-weight: 900;
+}
+
+.about p {
+    color: #a9c9c3;
+    line-height: 1.9;
+}
+
+/* =====================================================
+   TEACHERS
+===================================================== */
+
+.teachers {
+    padding: 100px 0;
+    background: var(--dark3);
+}
+
+.teacher-card {
+    padding: 30px;
+    text-align: center;
+
+    background: rgba(255,255,255,.05);
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    border-radius: 25px;
+
+    transition: .3s;
+}
+
+.teacher-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--sea);
+}
+
+.teacher-avatar {
+    width: 85px;
+    height: 85px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--sea);
+
+    color: #03231e;
+
+    border-radius: 50%;
+
+    font-size: 30px;
+}
+
+.teacher-card h4 {
+    margin-top: 18px;
+    font-weight: 800;
+}
+
+.teacher-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* =====================================================
+   TESTIMONIALS
+===================================================== */
+
+.testimonials {
+    padding: 100px 0;
+    background: var(--dark2);
+}
+
+.testimonial-card {
+    padding: 30px;
+
+    height: 100%;
+
+    background: rgba(255,255,255,.05);
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    border-radius: 25px;
+}
+
+.quote {
+    font-size: 30px;
+    color: var(--sea);
+}
+
+.testimonial-card p {
+    color: #b2cec9;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.student {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.student-avatar {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--sea);
+    color: #03231e;
+}
+
+.student small {
+    color: var(--muted);
+}
+
+/* =====================================================
+   FAQ
+===================================================== */
+
+.faq {
+    padding: 100px 0;
+    background: var(--dark3);
+}
+
+.accordion-item {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.1);
+    margin-bottom: 12px;
+    border-radius: 15px !important;
+    overflow: hidden;
+}
+
+.accordion-button {
+    background: rgba(255,255,255,.05);
+    color: white;
+    font-weight: 700;
+}
+
+.accordion-button:not(.collapsed) {
+    background: rgba(32,201,160,.12);
+    color: var(--sea-light);
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-body {
+    background: rgba(255,255,255,.03);
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact {
+    padding: 100px 0;
+    background: var(--dark2);
+}
+
+.contact-box {
+    padding: 45px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.1);
+}
+
+.form-control {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.12);
+    color: white;
+    border-radius: 12px;
+    padding: 13px;
+}
+
+.form-control:focus {
+    background: rgba(255,255,255,.08);
+    color: white;
+    border-color: var(--sea);
+    box-shadow: 0 0 0 .2rem rgba(32,201,160,.1);
+}
+
+.form-control::placeholder {
+    color: #789891;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    background: #021512;
+    padding: 55px 0 25px;
+
+    border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.footer-brand {
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.footer-brand span {
+    color: var(--sea);
+}
+
+.social-icon {
+    width: 42px;
+    height: 42px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.07);
+
+    color: white;
+
+    margin: 4px;
+
+    transition: .3s;
+}
+
+.social-icon:hover {
+    background: var(--sea);
+    color: #03231e;
+    transform: translateY(-5px);
+}
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal-content {
+    background: #062a25;
+    color: white;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 25px;
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(255,255,255,.1);
+}
+
+.btn-close {
+    filter: invert(1);
+}
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast {
+    background: #062a25;
+    color: white;
+    border: 1px solid rgba(32,201,160,.4);
+}
+
+/* =====================================================
+   BACK TO TOP
+===================================================== */
+
+#backTop {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--sea);
+    color: #03231e;
+
+    display: none;
+
+    z-index: 1000;
+
+    font-size: 18px;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width: 991px) {
+
+    .custom-navbar {
+        border-radius: 20px;
+    }
+
+    .hero-card {
+        display: none;
+    }
+
+    .navbar-nav {
+        padding-top: 15px;
+    }
+
+    .nav-link {
+        padding: 10px 0 !important;
+    }
+}
+
+@media(max-width: 768px) {
+
+    .hero {
+        min-height: 100vh;
+    }
+
+    .hero-content {
+        min-height: 82vh;
+    }
+
+    .hero h1 {
+        font-size: 53px;
+        letter-spacing: -2.5px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .courses-section,
+    .about,
+    .teachers,
+    .testimonials,
+    .faq,
+    .contact {
+        padding: 75px 0;
+    }
+
+    .about-box,
+    .contact-box {
+        padding: 30px;
+    }
+
+    .stat-number {
+        font-size: 36px;
+    }
+}
+
+@media(max-width: 400px) {
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .btn-sea,
+    .btn-outline-custom {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   CODEWAVE PRO — CLAUDE-INSPIRED UI UPGRADE
+   Keeps the original emerald/dark identity, but adds a
+   calmer AI-product feel, refined glass surfaces and UX.
+========================================================= */
+
+:root{
+  --cw-panel:rgba(10,39,34,.72);
+  --cw-panel-strong:rgba(8,34,30,.94);
+  --cw-border:rgba(176,235,221,.12);
+  --cw-border-hover:rgba(32,201,160,.55);
+  --cw-shadow:0 24px 80px rgba(0,0,0,.28);
+  --cw-glow:0 0 0 1px rgba(32,201,160,.08),0 20px 70px rgba(0,0,0,.25);
+}
+
+body{
+  background:
+    radial-gradient(circle at 75% 5%,rgba(32,201,160,.07),transparent 28%),
+    var(--dark);
+}
+
+body::selection{background:rgba(32,201,160,.3);color:#fff}
+
+/* Ambient grid */
+.hero,
+.courses-section,
+.stats,
+.about,
+.teachers,
+.testimonials,
+.faq,
+.contact{
+  position:relative;
+}
+.hero::before{
+  pointer-events:none;
+}
+.hero .container,
+.courses-section .container,
+.stats .container,
+.about .container,
+.teachers .container,
+.testimonials .container,
+.faq .container,
+.contact .container{
+  position:relative;
+  z-index:2;
+}
+
+/* Navbar */
+.custom-navbar{
+  background:rgba(4,29,25,.68);
+  border-color:rgba(255,255,255,.11);
+  box-shadow:0 12px 45px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.07);
+  transition:transform .3s ease,background .3s ease,border-color .3s ease,box-shadow .3s ease;
+}
+.custom-navbar:hover{
+  background:rgba(5,35,30,.82);
+  border-color:rgba(32,201,160,.22);
+}
+.navbar-brand{
+  letter-spacing:-.7px;
+}
+.navbar-brand::before{
+  content:"";
+  display:inline-block;
+  width:8px;height:8px;
+  margin:0 8px 2px 0;
+  border-radius:50%;
+  background:var(--sea);
+  box-shadow:0 0 16px rgba(32,201,160,.8);
+}
+.nav-link{
+  position:relative;
+  opacity:.82;
+}
+.nav-link::after{
+  content:"";
+  position:absolute;
+  left:7px;right:7px;bottom:2px;
+  height:2px;
+  border-radius:9px;
+  background:var(--sea);
+  transform:scaleX(0);
+  transform-origin:center;
+  transition:transform .25s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after{transform:scaleX(1)}
+.nav-link:hover,.nav-link.active{opacity:1}
+
+/* Hero */
+.hero{
+  background-position:center;
+}
+.hero-text{max-width:790px}
+.hero h1{
+  letter-spacing:-5px;
+  text-shadow:0 8px 45px rgba(0,0,0,.2);
+}
+.hero-description{
+  max-width:680px;
+}
+.badge-custom{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 10px 35px rgba(32,201,160,.06);
+}
+.hero-card{
+  width:245px;
+  border-radius:26px;
+  box-shadow:var(--cw-shadow),inset 0 1px 0 rgba(255,255,255,.08);
+  border-color:var(--cw-border);
+}
+.hero-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  background:linear-gradient(135deg,rgba(255,255,255,.08),transparent 35%);
+}
+
+/* Buttons */
+.btn-sea,.btn-outline-custom{
+  position:relative;
+  overflow:hidden;
+}
+.btn-sea::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.28),transparent 80%);
+  transform:translateX(-130%);
+  transition:transform .55s ease;
+}
+.btn-sea:hover::after{transform:translateX(130%)}
+
+/* Section headings */
+.section-title{
+  letter-spacing:-1.8px;
+}
+.section-label{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+.section-label::before{
+  content:"";
+  width:24px;height:1px;
+  background:var(--sea);
+  opacity:.75;
+}
+
+/* Search */
+.course-search{
+  max-width:620px;
+  min-height:58px;
+  background:rgba(255,255,255,.045);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 15px 50px rgba(0,0,0,.12);
+  transition:.3s;
+}
+.course-search:focus-within{
+  border-color:rgba(32,201,160,.48);
+  box-shadow:0 0 0 4px rgba(32,201,160,.07),0 20px 60px rgba(0,0,0,.16);
+}
+.course-search input{font-size:14px}
+
+/* Cards */
+.course-card,
+.teacher-card,
+.testimonial-card{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.045),0 15px 45px rgba(0,0,0,.1);
+}
+.course-card{
+  min-height:335px;
+  display:flex;
+  flex-direction:column;
+}
+.course-card p{flex:1}
+.course-card:hover{
+  transform:translateY(-8px) scale(1.008);
+  box-shadow:0 30px 75px rgba(0,0,0,.28),0 0 0 1px rgba(32,201,160,.1);
+}
+.course-icon{
+  box-shadow:0 10px 30px rgba(32,201,160,.15);
+}
+
+/* Stats */
+.stats{
+  border-top:1px solid rgba(255,255,255,.05);
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.stat-box{
+  position:relative;
+}
+.stat-box::after{
+  content:"";
+  position:absolute;
+  top:50%;right:0;
+  width:1px;height:48px;
+  transform:translateY(-50%);
+  background:rgba(255,255,255,.08);
+}
+.stat-box:last-child::after{display:none}
+
+/* About */
+.about-box{
+  box-shadow:var(--cw-shadow),inset 0 1px 0 rgba(255,255,255,.06);
+  position:relative;
+  overflow:hidden;
+}
+.about-box::before{
+  content:"";
+  position:absolute;
+  width:280px;height:280px;
+  right:-100px;top:-120px;
+  border-radius:50%;
+  border:1px solid rgba(32,201,160,.13);
+  box-shadow:0 0 0 45px rgba(32,201,160,.025),0 0 0 90px rgba(32,201,160,.018);
+}
+
+/* FAQ */
+.accordion-button{
+  min-height:64px;
+  border-radius:14px !important;
+  transition:.25s;
+}
+.accordion-button::after{
+  filter:brightness(1.7);
+}
+.accordion-item{
+  box-shadow:0 8px 30px rgba(0,0,0,.08);
+}
+
+/* Contact */
+.contact-box{
+  box-shadow:var(--cw-shadow),inset 0 1px 0 rgba(255,255,255,.06);
+}
+.form-control{
+  min-height:52px;
+  transition:.25s;
+}
+textarea.form-control{min-height:120px}
+.form-control:hover{border-color:rgba(255,255,255,.2)}
+
+/* Toast */
+.toast{
+  box-shadow:0 20px 60px rgba(0,0,0,.35);
+  backdrop-filter:blur(20px);
+}
+
+/* Back top */
+#backTop{
+  box-shadow:0 12px 35px rgba(0,0,0,.3);
+  transition:.25s;
+}
+#backTop:hover{transform:translateY(-4px)}
+
+/* New floating AI helper */
+#cwAssistant{
+  position:fixed;
+  right:22px;
+  bottom:78px;
+  z-index:1050;
+}
+.cw-ai-button{
+  width:54px;height:54px;
+  border:1px solid rgba(32,201,160,.38);
+  border-radius:18px;
+  background:rgba(5,36,30,.88);
+  color:var(--sea-light);
+  box-shadow:0 15px 45px rgba(0,0,0,.3),0 0 30px rgba(32,201,160,.08);
+  backdrop-filter:blur(18px);
+  cursor:pointer;
+  transition:.25s;
+}
+.cw-ai-button:hover{
+  transform:translateY(-4px) scale(1.03);
+  border-color:var(--sea);
+}
+.cw-ai-button i{font-size:20px}
+.cw-ai-panel{
+  position:absolute;
+  right:0;
+  bottom:66px;
+  width:min(355px,calc(100vw - 34px));
+  padding:0;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:22px;
+  overflow:hidden;
+  background:rgba(4,25,22,.96);
+  box-shadow:0 30px 100px rgba(0,0,0,.45);
+  backdrop-filter:blur(24px);
+  opacity:0;
+  transform:translateY(12px) scale(.97);
+  pointer-events:none;
+  transition:.25s ease;
+}
+.cw-ai-panel.open{
+  opacity:1;
+  transform:translateY(0) scale(1);
+  pointer-events:auto;
+}
+.cw-ai-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:17px 18px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.cw-ai-title{
+  display:flex;align-items:center;gap:10px;
+  font-weight:800;font-size:14px;
+}
+.cw-ai-dot{
+  width:9px;height:9px;border-radius:50%;
+  background:var(--sea);
+  box-shadow:0 0 15px rgba(32,201,160,.8);
+}
+.cw-ai-close{
+  border:0;background:transparent;color:#91ada7;cursor:pointer;
+}
+.cw-ai-body{padding:18px}
+.cw-ai-welcome{
+  padding:15px;
+  border-radius:15px;
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.07);
+  color:#c8dfdb;
+  font-size:13px;
+  line-height:1.65;
+}
+.cw-ai-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-top:12px;
+}
+.cw-ai-action{
+  border:1px solid rgba(255,255,255,.09);
+  background:rgba(255,255,255,.035);
+  color:#d8e9e5;
+  border-radius:12px;
+  padding:11px 10px;
+  text-align:left;
+  cursor:pointer;
+  font-size:12px;
+  transition:.2s;
+}
+.cw-ai-action:hover{
+  border-color:rgba(32,201,160,.4);
+  background:rgba(32,201,160,.08);
+  color:white;
+}
+.cw-ai-action i{color:var(--sea);margin-right:6px}
+
+/* Scroll progress */
+#cwProgress{
+  position:fixed;
+  top:0;left:0;
+  width:0;height:3px;
+  background:linear-gradient(90deg,var(--sea-dark),var(--sea),var(--sea-light));
+  z-index:2000;
+  box-shadow:0 0 16px rgba(32,201,160,.5);
+}
+
+/* Cursor spotlight */
+#cwSpotlight{
+  position:fixed;
+  width:260px;height:260px;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:0;
+  background:radial-gradient(circle,rgba(32,201,160,.055),transparent 68%);
+  transform:translate(-50%,-50%);
+  opacity:0;
+  transition:opacity .25s;
+}
+
+/* Better reduced motion support */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    scroll-behavior:auto !important;
+    transition-duration:.01ms !important;
+  }
+}
+
+@media(max-width:768px){
+  #cwAssistant{right:15px;bottom:72px}
+  .cw-ai-panel{right:-4px}
+  .stat-box::after{display:none}
+  .hero h1{letter-spacing:-3px}
+}
+
+</style></head><body><!-- PRELOADER --><div id="preloader">
+    <div class="loader"></div>
+</div><!-- =====================================================
+     HERO
+===================================================== --><section class="hero" id="home"><div class="container"><nav class="navbar navbar-expand-lg custom-navbar"><a class="navbar-brand" href="#home">
+    Code<span>Wave</span>
+</a><button
+class="navbar-toggler"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#navbarMenu">
+
+<i class="fa-solid fa-bars text-white"></i>
+
+</button><div class="collapse navbar-collapse" id="navbarMenu"><ul class="navbar-nav mx-auto"><li class="nav-item">
+<a class="nav-link active" href="#home">HOME</a>
+</li><li class="nav-item">
+<a class="nav-link" href="#courses">COURSES</a>
+</li><li class="nav-item">
+<a class="nav-link" href="#about">ABOUT</a>
+</li><li class="nav-item">
+<a class="nav-link" href="#teachers">TEACHERS</a>
+</li><li class="nav-item">
+<a class="nav-link" href="#contact">CONTACT</a>
+</li></ul><a href="#courses" class="btn btn-sea btn-sm">
+Start Learning
+</a></div></nav></div><div class="container hero-content"><div class="hero-text"><div class="badge-custom">
+<i class="fa-solid fa-laptop-code"></i>
+COMPUTER EDUCATION
+</div><h1>
+Learn
+<span>Computer</span>
+Skills.
+</h1><p class="hero-description">
+Build your digital future with practical computer skills.
+Learn Web Development, JavaScript, Python, Graphic Design,
+Artificial Intelligence and more — from beginner to advanced.
+</p><div class="d-flex gap-3 flex-wrap mt-4"><a href="#courses" class="btn btn-sea">
+Explore Courses
+<i class="fa-solid fa-arrow-right ms-2"></i>
+</a><a href="#about" class="btn btn-outline-custom">
+Learn More
+</a></div></div><div class="hero-card"><div class="hero-card-icon">
+<i class="fa-solid fa-graduation-cap"></i>
+</div><h5>Start Your Journey</h5><p>
+Learn practical skills and create your future.
+</p></div></div></section><!-- =====================================================
+     COURSES
+===================================================== --><section class="courses-section" id="courses"><div class="container"><div class="text-center"><div class="section-label">
+WHAT WE TEACH
+</div><h2 class="section-title">
+Our <span>Popular Courses</span>
+</h2><p class="section-text">
+Choose a course and start developing the skills you need
+for today's digital world.
+</p></div><!-- SEARCH --><div class="course-search"><i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search courses...">
+
+</div><div class="row g-4" id="courseContainer"><!-- COURSE 1 --><div class="col-lg-4 col-md-6 course-item"
+data-course="web development html css bootstrap"><div class="course-card"><div class="course-icon">
+<i class="fa-solid fa-code"></i>
+</div><h3>Web Development</h3><div class="rating">
+★★★★★
+</div><p>
+Learn HTML, CSS, Bootstrap and modern techniques
+to create responsive professional websites.
+</p><div class="course-info"><span>
+<i class="fa-regular fa-clock"></i>
+3 Months
+</span><span>
+<i class="fa-solid fa-signal"></i>
+Beginner
+</span></div><button
+class="btn btn-sea w-100 details-btn"
+data-course-name="Web Development">
+
+View Details
+</button>
+
+</div>
+</div><!-- COURSE 2 --><div class="col-lg-4 col-md-6 course-item"
+data-course="javascript programming js"><div class="course-card"><div class="course-icon">
+<i class="fa-brands fa-js"></i>
+</div><h3>JavaScript</h3><div class="rating">
+★★★★★
+</div><p>
+Master JavaScript, functions, events, DOM manipulation
+and interactive website development.
+</p><div class="course-info"><span>
+<i class="fa-regular fa-clock"></i>
+2 Months
+</span><span>
+<i class="fa-solid fa-signal"></i>
+Intermediate
+</span></div><button
+class="btn btn-sea w-100 details-btn"
+data-course-name="JavaScript">
+
+View Details
+</button>
+
+</div>
+</div><!-- COURSE 3 --><div class="col-lg-4 col-md-6 course-item"
+data-course="graphic design photoshop illustrator"><div class="course-card"><div class="course-icon">
+<i class="fa-solid fa-palette"></i>
+</div><h3>Graphic Design</h3><div class="rating">
+★★★★★
+</div><p>
+Learn creative design, layouts, typography and digital
+graphics for professional projects.
+</p><div class="course-info"><span>
+<i class="fa-regular fa-clock"></i>
+3 Months
+</span><span>
+<i class="fa-solid fa-signal"></i>
+Beginner
+</span></div><button
+class="btn btn-sea w-100 details-btn"
+data-course-name="Graphic Design">
+
+View Details
+</button>
+
+</div>
+</div><!-- COURSE 4 --><div class="col-lg-4 col-md-6 course-item"
+data-course="python programming automation"><div class="course-card"><div class="course-icon">
+<i class="fa-brands fa-python"></i>
+</div><h3>Python Programming</h3><div class="rating">
+★★★★★
+</div><p>
+Learn Python fundamentals, programming logic,
+functions, projects and automation.
+</p><div class="course-info"><span>
+<i class="fa-regular fa-clock"></i>
+3 Months
+</span><span>
+<i class="fa-solid fa-signal"></i>
+Beginner
+</span></div><button
+class="btn btn-sea w-100 details-btn"
+data-course-name="Python Programming">
+
+View Details
+</button>
+
+</div>
+</div><!-- COURSE 5 --><div class="col-lg-4 col-md-6 course-item"
+data-course="artificial intelligence ai machine learning"><div class="course-card"><div class="course-icon">
+<i class="fa-solid fa-brain"></i>
+</div><h3>Artificial Intelligence</h3><div class="rating">
+★★★★★
+</div><p>
+Explore AI concepts, machine learning, automation
+and modern artificial intelligence tools.
+</p><div class="course-info"><span>
+<i class="fa-regular fa-clock"></i>
+4 Months
+</span><span>
+<i class="fa-solid fa-signal"></i>
+Advanced
+</span></div><button
+class="btn btn-sea w-100 details-btn"
+data-course-name="Artificial Intelligence">
+
+View Details
+</button>
+
+</div>
+</div><!-- COURSE 6 --><div class="col-lg-4 col-md-6 course-item"
+data-course="computer basics ms office word excel powerpoint"><div class="course-card"><div class="course-icon">
+<i class="fa-solid fa-computer"></i>
+</div><h3>Computer Basics</h3><div class="rating">
+★★★★★
+</div><p>
+Learn Windows, MS Word, Excel, PowerPoint,
+internet and essential computer skills.
+</p><div class="course-info"><span>
+<i class="fa-regular fa-clock"></i>
+2 Months
+</span><span>
+<i class="fa-solid fa-signal"></i>
+Beginner
+</span></div><button
+class="btn btn-sea w-100 details-btn"
+data-course-name="Computer Basics">
+
+View Details
+</button>
+
+</div>
+</div></div><div id="noResults" class="text-center mt-5 d-none"><i class="fa-solid fa-face-frown fa-2x text-secondary"></i>
+
+<h5 class="mt-3">
+No courses found
+</h5><p class="text-secondary">
+Try another search.
+</p></div></div>
+</section><!-- =====================================================
+     STATS
+===================================================== --><section class="stats"><div class="container"><div class="row text-center g-4"><div class="col-6 col-md-3">
+<div class="stat-box"><div class="stat-number" data-target="1200">
+0
+</div><div class="stat-text">
+Students
+</div></div>
+</div><div class="col-6 col-md-3">
+<div class="stat-box"><div class="stat-number" data-target="25">
+0
+</div><div class="stat-text">
+Courses
+</div></div>
+</div><div class="col-6 col-md-3">
+<div class="stat-box"><div class="stat-number" data-target="15">
+0
+</div><div class="stat-text">
+Expert Teachers
+</div></div>
+</div><div class="col-6 col-md-3">
+<div class="stat-box"><div class="stat-number" data-target="95">
+0
+</div><div class="stat-text">
+Success Rate %
+</div></div>
+</div></div>
+</div>
+</section><!-- =====================================================
+     ABOUT
+===================================================== --><section class="about" id="about"><div class="container"><div class="about-box"><div class="row align-items-center g-5"><div class="col-lg-6"><div class="about-icon">
+<i class="fa-solid fa-graduation-cap"></i>
+</div><div class="section-label">
+ABOUT CODEWAVE
+</div><h2>
+Learn Today.<br>
+Build Tomorrow.
+</h2></div><div class="col-lg-6"><p>
+CodeWave Academy is a modern computer learning platform
+designed to help students develop practical digital skills.
+Whether you are a complete beginner or want to become a
+professional developer, our courses are designed to help
+you learn step by step.
+</p><p>
+Our goal is simple: learn useful skills, build real projects
+and become confident in the digital world.
+</p><a href="#courses" class="btn btn-sea mt-2">
+Explore Courses
+</a></div></div></div></div>
+</section><!-- =====================================================
+     TEACHERS
+===================================================== --><section class="teachers" id="teachers"><div class="container"><div class="text-center"><div class="section-label">
+MEET OUR TEAM
+</div><h2 class="section-title">
+Expert <span>Teachers</span>
+</h2><p class="section-text">
+Learn from instructors who focus on practical skills
+and project-based learning.
+</p></div><div class="row g-4"><div class="col-md-4"><div class="teacher-card"><div class="teacher-avatar">
+<i class="fa-solid fa-user-tie"></i>
+</div><h4>Web Instructor</h4><p>
+Web Development & JavaScript
+</p><div class="rating">
+★★★★★
+</div></div>
+</div><div class="col-md-4"><div class="teacher-card"><div class="teacher-avatar">
+<i class="fa-solid fa-user-graduate"></i>
+</div><h4>Programming Instructor</h4><p>
+Python & Programming
+</p><div class="rating">
+★★★★★
+</div></div>
+</div><div class="col-md-4"><div class="teacher-card"><div class="teacher-avatar">
+<i class="fa-solid fa-chalkboard-user"></i>
+</div><h4>Creative Instructor</h4><p>
+Graphic Design & Digital Skills
+</p><div class="rating">
+★★★★★
+</div></div>
+</div></div></div>
+</section><!-- =====================================================
+     TESTIMONIALS
+===================================================== --><section class="testimonials"><div class="container"><div class="text-center"><div class="section-label">
+STUDENT REVIEWS
+</div><h2 class="section-title">
+What Students <span>Say</span>
+</h2></div><div class="row g-4 mt-3"><div class="col-md-4"><div class="testimonial-card"><div class="quote">
+<i class="fa-solid fa-quote-left"></i>
+</div><p>
+The Web Development course helped me understand
+HTML and CSS much more easily. The lessons were
+simple and practical.
+</p><div class="student"><div class="student-avatar">
+<i class="fa-solid fa-user"></i>
+</div><div>
+<strong>Student</strong><br>
+<small>Web Development</small>
+</div></div></div>
+</div><div class="col-md-4"><div class="testimonial-card"><div class="quote">
+<i class="fa-solid fa-quote-left"></i>
+</div><p>
+I started learning Python as a beginner and now
+I can create small projects myself. Great learning
+experience.
+</p><div class="student"><div class="student-avatar">
+<i class="fa-solid fa-user"></i>
+</div><div>
+<strong>Student</strong><br>
+<small>Python Programming</small>
+</div></div></div>
+</div><div class="col-md-4"><div class="testimonial-card"><div class="quote">
+<i class="fa-solid fa-quote-left"></i>
+</div><p>
+The computer basics course was exactly what I needed.
+Everything was explained step by step.
+</p><div class="student"><div class="student-avatar">
+<i class="fa-solid fa-user"></i>
+</div><div>
+<strong>Student</strong><br>
+<small>Computer Basics</small>
+</div></div></div>
+</div></div>
+</div>
+</section><!-- =====================================================
+     FAQ
+===================================================== --><section class="faq"><div class="container"><div class="text-center"><div class="section-label">
+FAQ
+</div><h2 class="section-title">
+Frequently Asked <span>Questions</span>
+</h2></div><div class="accordion mt-5" id="faqAccordion"><div class="accordion-item"><h2 class="accordion-header"><button
+class="accordion-button"
+data-bs-toggle="collapse"
+data-bs-target="#faq1">
+
+Are the courses suitable for beginners?
+
+</button></h2><div
+id="faq1"
+class="accordion-collapse collapse show"
+data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. Several of our courses start from the basics
+and gradually move toward more advanced topics.
+
+</div></div>
+</div><div class="accordion-item"><h2 class="accordion-header"><button
+class="accordion-button collapsed"
+data-bs-toggle="collapse"
+data-bs-target="#faq2">
+
+How long do the courses take?
+
+</button></h2><div
+id="faq2"
+class="accordion-collapse collapse"
+data-bs-parent="#faqAccordion"><div class="accordion-body">Course duration depends on the program. Our courses
+currently range from approximately 2 to 4 months.
+
+</div></div>
+</div><div class="accordion-item"><h2 class="accordion-header"><button
+class="accordion-button collapsed"
+data-bs-toggle="collapse"
+data-bs-target="#faq3">
+
+How can I enroll?
+
+</button></h2><div
+id="faq3"
+class="accordion-collapse collapse"
+data-bs-parent="#faqAccordion"><div class="accordion-body">Choose a course and use the enrollment form in the
+Contact section. You can then provide your details
+for further information.
+
+</div></div>
+</div></div></div>
+</section><!-- =====================================================
+     CONTACT
+===================================================== --><section class="contact" id="contact"><div class="container"><div class="row justify-content-center"><div class="col-lg-8"><div class="contact-box"><div class="text-center mb-4"><div class="section-label">
+GET STARTED
+</div><h2 class="section-title">
+Join <span>CodeWave</span>
+</h2><p class="text-secondary">
+Ready to start learning? Send us your details.
+</p></div><form id="contactForm"><div class="row g-3"><div class="col-md-6"><input
+type="text"
+class="form-control"
+id="name"
+placeholder="Your Name"
+required>
+
+</div><div class="col-md-6"><input
+type="email"
+class="form-control"
+id="email"
+placeholder="Your Email"
+required>
+
+</div><div class="col-12"><select
+class="form-control"
+id="courseSelect"
+required>
+
+<option value="" selected disabled>
+Select a Course
+</option><option>Web Development</option>
+<option>JavaScript</option>
+<option>Graphic Design</option>
+<option>Python Programming</option>
+<option>Artificial Intelligence</option>
+<option>Computer Basics</option></select></div><div class="col-12"><textarea
+class="form-control"
+id="message"
+rows="4"
+placeholder="Your Message"></textarea></div><div class="col-12"><button
+type="submit"
+class="btn btn-sea w-100">
+
+Send Enrollment Request
+<i class="fa-solid fa-paper-plane ms-2"></i>
+
+</button></div></div></form></div></div></div></div>
+</section><!-- =====================================================
+     FOOTER
+===================================================== --><footer><div class="container text-center"><div class="footer-brand">
+Code<span>Wave</span> Academy
+</div><p class="text-secondary mt-2">
+Learn. Create. Innovate.
+</p><div class="mt-3"><a href="#" class="social-icon">
+<i class="fa-brands fa-facebook-f"></i>
+</a><a href="#" class="social-icon">
+<i class="fa-brands fa-instagram"></i>
+</a><a href="#" class="social-icon">
+<i class="fa-brands fa-youtube"></i>
+</a><a href="#" class="social-icon">
+<i class="fa-brands fa-github"></i>
+</a></div><hr class="border-secondary my-4"><small class="text-secondary">
+© 2026 CodeWave Academy. All Rights Reserved.
+</small></div></footer><!-- BACK TO TOP --><button id="backTop">
+<i class="fa-solid fa-arrow-up"></i>
+</button><!-- =====================================================
+     COURSE MODAL
+===================================================== --><div
+class="modal fade"
+id="courseModal"
+tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="modalCourseName">
+Course Details
+</h5><button
+type="button"
+class="btn-close"
+data-bs-dismiss="modal">
+</button>
+
+</div><div class="modal-body"><p>
+<i class="fa-solid fa-circle-check text-success me-2"></i>
+Practical project-based learning
+</p><p>
+<i class="fa-solid fa-circle-check text-success me-2"></i>
+Beginner-friendly lessons
+</p><p>
+<i class="fa-solid fa-circle-check text-success me-2"></i>
+Hands-on exercises
+</p><p>
+<i class="fa-solid fa-circle-check text-success me-2"></i>
+Career-focused computer skills
+</p><a href="#contact"
+class="btn btn-sea w-100"
+data-bs-dismiss="modal">
+
+Enroll in This Course
+
+</a></div></div>
+</div>
+</div><!-- TOAST --><div
+class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3"><div
+id="successToast"
+class="toast"><div class="toast-body"><i class="fa-solid fa-circle-check text-success me-2"></i>
+
+Your enrollment request has been received!
+
+</div></div></div><!-- Bootstrap JS --><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script>
+
+/* =====================================================
+   PRELOADER
+===================================================== */
+
+window.addEventListener("load", function() {
+
+    const preloader =
+        document.getElementById("preloader");
+
+    setTimeout(function() {
+
+        preloader.style.opacity = "0";
+
+        setTimeout(function() {
+            preloader.style.display = "none";
+        }, 500);
+
+    }, 500);
+
+});
+
+
+/* =====================================================
+   COURSE SEARCH
+===================================================== */
+
+const searchInput =
+    document.getElementById("searchInput");
+
+const courseItems =
+    document.querySelectorAll(".course-item");
+
+const noResults =
+    document.getElementById("noResults");
+
+
+searchInput.addEventListener("input", function() {
+
+    const value =
+        this.value.toLowerCase().trim();
+
+    let found = 0;
+
+    courseItems.forEach(function(course) {
+
+        const data =
+            course.dataset.course.toLowerCase();
+
+        if (data.includes(value)) {
+
+            course.style.display = "";
+
+            found++;
+
+        } else {
+
+            course.style.display = "none";
+
+        }
+
+    });
+
+    if (found === 0) {
+
+        noResults.classList.remove("d-none");
+
+    } else {
+
+        noResults.classList.add("d-none");
+
+    }
+
+});
+
+
+/* =====================================================
+   COURSE DETAILS MODAL
+===================================================== */
+
+const detailButtons =
+    document.querySelectorAll(".details-btn");
+
+const modalElement =
+    document.getElementById("courseModal");
+
+const courseModal =
+    new bootstrap.Modal(modalElement);
+
+const modalCourseName =
+    document.getElementById("modalCourseName");
+
+
+detailButtons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        const courseName =
+            this.dataset.courseName;
+
+        modalCourseName.innerText =
+            courseName;
+
+        courseModal.show();
+
+    });
+
+});
+
+
+/* =====================================================
+   ANIMATED STATS
+===================================================== */
+
+const statNumbers =
+    document.querySelectorAll(".stat-number");
+
+let statsStarted = false;
+
+
+function startStats() {
+
+    if (statsStarted) return;
+
+    statsStarted = true;
+
+    statNumbers.forEach(function(stat) {
+
+        const target =
+            Number(stat.dataset.target);
+
+        let current = 0;
+
+        const increment =
+            Math.max(1, Math.ceil(target / 60));
+
+        const timer =
+            setInterval(function() {
+
+                current += increment;
+
+                if (current >= target) {
+
+                    current = target;
+
+                    clearInterval(timer);
+
+                }
+
+                stat.innerText =
+                    current.toLocaleString();
+
+            }, 25);
+
+    });
+
+}
+
+
+/* =====================================================
+   INTERSECTION OBSERVER
+===================================================== */
+
+const statsSection =
+    document.querySelector(".stats");
+
+
+const statsObserver =
+    new IntersectionObserver(function(entries) {
+
+        if (entries[0].isIntersecting) {
+
+            startStats();
+
+        }
+
+    }, {
+        threshold: .3
+    });
+
+
+statsObserver.observe(statsSection);
+
+
+/* =====================================================
+   MOBILE NAVBAR CLOSE
+===================================================== */
+
+const navLinks =
+    document.querySelectorAll(".nav-link");
+
+const navbarMenu =
+    document.getElementById("navbarMenu");
+
+
+navLinks.forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        if (navbarMenu.classList.contains("show")) {
+
+            bootstrap.Collapse
+                .getOrCreateInstance(navbarMenu)
+                .hide();
+
+        }
+
+    });
+
+});
+
+
+/* =====================================================
+   ACTIVE NAVIGATION
+===================================================== */
+
+const sections =
+    document.querySelectorAll("section[id]");
+
+
+window.addEventListener("scroll", function() {
+
+    let current = "";
+
+    sections.forEach(function(section) {
+
+        const sectionTop =
+            section.offsetTop - 150;
+
+        if (window.scrollY >= sectionTop) {
+
+            current =
+                section.getAttribute("id");
+
+        }
+
+    });
+
+    navLinks.forEach(function(link) {
+
+        link.classList.remove("active");
+
+        if (
+            link.getAttribute("href") ===
+            "#" + current
+        ) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+
+/* =====================================================
+   BACK TO TOP
+===================================================== */
+
+const backTop =
+    document.getElementById("backTop");
+
+
+window.addEventListener("scroll", function() {
+
+    if (window.scrollY > 500) {
+
+        backTop.style.display = "block";
+
+    } else {
+
+        backTop.style.display = "none";
+
+    }
+
+});
+
+
+backTop.addEventListener("click", function() {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+
+
+/* =====================================================
+   CONTACT FORM
+===================================================== */
+
+const contactForm =
+    document.getElementById("contactForm");
+
+
+contactForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const toastElement =
+        document.getElementById("successToast");
+
+    const toast =
+        new bootstrap.Toast(toastElement);
+
+    toast.show();
+
+    contactForm.reset();
+
+});
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+const revealElements =
+    document.querySelectorAll(
+        ".course-card, .teacher-card, .testimonial-card"
+    );
+
+
+const revealObserver =
+    new IntersectionObserver(function(entries) {
+
+        entries.forEach(function(entry) {
+
+            if (entry.isIntersecting) {
+
+                entry.target.style.opacity = "1";
+                entry.target.style.transform =
+                    "translateY(0)";
+
+                revealObserver.unobserve(
+                    entry.target
+                );
+
+            }
+
+        });
+
+    }, {
+        threshold: .12
+    });
+
+
+revealElements.forEach(function(element) {
+
+    element.style.opacity = "0";
+
+    element.style.transform =
+        "translateY(30px)";
+
+    element.style.transition =
+        "opacity .7s ease, transform .7s ease";
+
+    revealObserver.observe(element);
+
+});
+
+</script>
+<!-- CLAUDE-INSPIRED UI EXTRAS -->
+<div id="cwProgress"></div>
+<div id="cwSpotlight"></div>
+
+<div id="cwAssistant">
+  <button class="cw-ai-button" id="cwAiButton" aria-label="Open CodeWave assistant">
+    <i class="fa-solid fa-sparkles"></i>
+  </button>
+
+  <div class="cw-ai-panel" id="cwAiPanel">
+    <div class="cw-ai-head">
+      <div class="cw-ai-title">
+        <span class="cw-ai-dot"></span>
+        CodeWave Assistant
+      </div>
+      <button class="cw-ai-close" id="cwAiClose" aria-label="Close assistant">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="cw-ai-body">
+      <div class="cw-ai-welcome">
+        <strong>Hi! 👋</strong><br>
+        I can help you choose a course and find the right starting point.
+      </div>
+      <div class="cw-ai-actions">
+        <button class="cw-ai-action" data-ai-action="courses">
+          <i class="fa-solid fa-layer-group"></i> View courses
+        </button>
+        <button class="cw-ai-action" data-ai-action="beginner">
+          <i class="fa-solid fa-seedling"></i> I'm a beginner
+        </button>
+        <button class="cw-ai-action" data-ai-action="ai">
+          <i class="fa-solid fa-brain"></i> Learn AI
+        </button>
+        <button class="cw-ai-action" data-ai-action="contact">
+          <i class="fa-regular fa-paper-plane"></i> Enroll
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
